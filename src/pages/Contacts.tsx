@@ -1,17 +1,17 @@
 import { Mail, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Contacts = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        <Link 
-          to="/" 
-          className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-smooth"
-        >
-          ← Към начална страница
-        </Link>
-        
+      <Header />
+      <div className="max-w-4xl mx-auto px-6 py-24 sm:py-32">
         <h1 className="text-4xl font-bold mb-8">Контакти</h1>
         
         <div className="space-y-8">
@@ -25,7 +25,7 @@ const Contacts = () => {
 
           <div className="grid gap-6">
             <a 
-              href="mailto:info@advokit.bg"
+              href="mailto:advokitdpk@gmail.com"
               className="flex items-center gap-4 p-6 bg-card border border-border rounded-lg hover:shadow-lg transition-smooth group"
             >
               <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-smooth">
@@ -33,11 +33,11 @@ const Contacts = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Имейл</h3>
-                <p className="text-muted-foreground">info@advokit.bg</p>
+                <p className="text-muted-foreground">advokitdpk@gmail.com</p>
               </div>
             </a>
 
-            <a 
+            {/* <a 
               href="https://linkedin.com/company/advokit"
               target="_blank"
               rel="noopener noreferrer"
@@ -48,12 +48,13 @@ const Contacts = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">LinkedIn</h3>
-                <p className="text-muted-foreground">linkedin.com/company/advokit</p>
+                <p className="text-muted-foreground">linkedin.com/in/advokit</p>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

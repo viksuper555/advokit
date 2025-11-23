@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import logoFull from "@/assets/logo-full.png";
+import logoFull from "@/assets/logo-full.svg";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -23,17 +24,17 @@ const Hero = () => {
       
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         <img 
-          src={logoFull} 
-          alt="ADVOKIT" 
-          className="h-16 mx-auto mb-8 animate-fade-in"
+          src={logoFull}
+          alt="ADVOKIT"
+          className="h-16 mx-auto mb-12 animate-fade-in object-cover object-center aspect-[6/1]"
         />
         
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in-up">
-          Облачна платформа за управление на{" "}
-          <span className="text-primary">правната работа</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in-up px-4">
+          Облачна платформа за управление на Вашите{" "}
+          <span className="text-primary">юридически процеси</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-medium max-w-3xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
           Централизирайте дела, задачи и срокове в едно сигурно място.
         </p>
         
@@ -55,15 +56,15 @@ const Hero = () => {
             size="lg"
             className="h-14 px-8 bg-gradient-primary hover:opacity-90 transition-smooth shadow-medium hover:shadow-soft"
           >
-            Стани сред първите
+            Научете първи за нас
           </Button>
         </form>
         
-        <p className="text-sm text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <p className="text-sm text-foreground/70 animate-fade-in-up px-4" style={{ animationDelay: '0.6s' }}>
           С абонирането приемам{" "}
-          <a href="#privacy" className="text-primary hover:underline">
+          <Link to="/privacy" className="text-primary font-semibold hover:text-primary-light underline decoration-2 underline-offset-2 transition-smooth">
             Политиката за поверителност
-          </a>
+          </Link>
         </p>
       </div>
     </section>
